@@ -1,4 +1,4 @@
-# This is an undirected unweighted graph and here we will use BFS algorith to traverse the graph
+# This is an undirected unweighted graph and here we will use DFS algorith to traverse the graph
 graph = [[1,2], [0,4], [0,3,4], [2,5], [1,2], [2,3], [7], [6]]
 
 '''
@@ -11,33 +11,29 @@ graph = [[1,2], [0,4], [0,3,4], [2,5], [1,2], [2,3], [7], [6]]
 '''
 
 class Solution:
-    def bfs_traversal(self, graph):
-        '''This function takes an adjacency list and return an array of BFS Traversal'''
-        from collections import deque
+    def dfs_traversal(self, graph):
+        '''This function takes an adjacency list and return an array of DFS Traversal'''
         n = len(graph)
         ans = []
         visited = [False]*n #creating a visited array to track if a node is visited or not
 
-        def bfs(node):
-            q = deque([node])
-            while q:
-                vertex = q.popleft()
-                ans.append(vertex)
-                for v in graph[vertex]:
-                    if not visited[v]:
-                        q.append(v)
-                        visited[v] = True
+        def dfs(node):
+            visited[node] = True
+            ans.append(node)
+            for v in graph[node]:
+                if not visited[v]:
+                    dfs(v)
 
         for i in range(n):
             # checking nodes are visited or not
             # this checking is important for graph with multiple component
             if not visited[i]:
                 visited[i] = True
-                bfs(i)
+                dfs(i)
         return ans
     
 obj = Solution()
-ans = obj.bfs_traversal(graph)
+ans = obj.dfs_traversal(graph)
 print(ans)
 
 # Notes:    This algorithm can also be used in counting components in a graph
