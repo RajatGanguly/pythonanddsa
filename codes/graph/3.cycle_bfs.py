@@ -1,5 +1,5 @@
 # This is an undirected unweighted graph and here we will use BFS algorith to check if there is any loop present or not
-graph = [[1,2], [0,4], [0,3,4], [2,5], [1,2], [2,3], [7], [6]]
+graph = [[1,2], [0,4], [0,3,4,5], [2,5], [1,2], [2,3], [7], [6]]
 
 '''
     The above decleared graph is depected below
@@ -12,7 +12,7 @@ graph = [[1,2], [0,4], [0,3,4], [2,5], [1,2], [2,3], [7], [6]]
 
 class Solution:
     def cycle_detection_bfs(self, graph):
-        '''This function takes an adjacency list and return an array of BFS Traversal'''
+        '''This function takes an adjacency list and return if there is any cycle present or not'''
         from collections import deque
         n = len(graph)
         #creating a visited array to track if a node is visited or not

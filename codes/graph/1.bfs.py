@@ -1,5 +1,5 @@
 # This is an undirected unweighted graph and here we will use BFS algorith to traverse the graph
-graph = [[1,2], [0,4], [0,3,4], [2,5], [1,2], [2,3], [7], [6]]
+graph = [[1,2], [0,4], [0,3,4,5], [2,5], [1,2], [2,3], [7], [6]]
 
 '''
     The above decleared graph is depected below
