@@ -1,5 +1,4 @@
 # Topological sort are applicable only on DAG(Directed Acyclic Graph)
-# The below algorithm is also known as KAHN'S Algorithm
 graph = [[], [0], [0], [0]]
 
 class Solution:
