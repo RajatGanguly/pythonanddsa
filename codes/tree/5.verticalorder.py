@@ -21,7 +21,7 @@ root.left.left = Node(4)
 root.left.right = Node(5)
 
 class Solution:
-    def level_order(self, root):
+    def vertical_order(self, root):
         '''This function takes root node and returns an array of vertical order traversal'''
         from collections import defaultdict
         d = defaultdict(lambda: defaultdict(list))
@@ -41,5 +41,5 @@ class Solution:
         return ans
     
 obj = Solution()
-ans = obj.level_order(root)
+ans = obj.vertical_order(root)
 print(ans)
